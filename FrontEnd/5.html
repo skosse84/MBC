@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FrontEnd Task 5</title>
+    <style>
+        .sort {
+            border: 1px solid blue;
+        }
+        .container{
+            display: flex;
+            border: 2px solid black;
+            height: 100%;
+        }
+        .output{
+            border: 2px solid #515151;
+            margin-left: 100px;
+            width: 400px;
+        }
+        button{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div>
+        <div class="sort" style="width: 40px; height: 30px; background-color: #49ff0d"></div>
+        <div class="void" style="width: 40px; height: 70px; background-color: #49e1ff"></div>
+        <div class="sort" style="width: 50px; height: 50px; background-color: #2e24ff"></div>
+        <div class="empty" style="width: 70px; height: 60px; background-color: #ff6523"></div>
+        <div class="sort" style="width: 90px; height: 90px; background-color: #ff113d"></div>
+        <div class="sort" style="width: 20px; height: 20px; background-color: #fffc03"></div>
+        <div class="sort" style="width: 20px; height: 10px; background-color: #b4ffbd"></div>
+    </div>
+    <div class="output"></div>
+</div>
+
+<button id="sortButton">SORT ELEMENTS</button>
+
+<script>
+
+sortButton.addEventListener("click", sortElem);
+let elemForSort = Array.from(document.querySelectorAll(".sort"));
+let output = document.querySelector(".output");
+
+function sortElem() {
+
+    elemForSort.sort((one, two) => {
+
+        let oneHeight = getComputedStyle(one).height;
+        let twoHeight = getComputedStyle(two).height;
+
+        if (oneHeight > twoHeight) {
+            return 1;
+        }
+        if (oneHeight < twoHeight) {
+            return -1;
+        }
+
+        return 0;
+    });
+
+    elemForSort.forEach((value => output.append(value)));
+}
+
+</script>
+</body>
+</html>

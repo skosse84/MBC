@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FrontEnd Task 3</title>
+    <style>
+        ul {
+            display: block;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul:after {
+            display: block;
+            content: ' ';
+            clear: both;
+            float: none;
+        }
+        ul.nav > li {
+            float: left;
+            position: relative;
+        }
+        ul.nav > li > a {
+            display: block;
+            padding: 10px 20px 10px 20px;
+            color: #5e27ff;
+            background-color: #28ff06;
+            text-decoration: none;
+        }
+        ul.nav > li > a:hover {
+            background-color: #dcff14;
+        }
+        ul.sub {
+            display: none;
+            position: absolute;
+            width: 120px;
+            top: 37px;
+            left: 0;
+            background-color: white;
+            z-index: 1000;
+        }
+        ul.sub > li {
+            display: block;
+        }
+        ul.sub > li > a {
+            display: block;
+            padding: 10px;
+            color: white;
+            background-color: #49ff0d;
+            text-decoration: none;
+        }
+        ul.sub > li > a:hover {
+            text-decoration: underline;
+        }
+
+        ul.nav > li > ul.sub {
+            display: block;
+            transition-property: opacity;
+            transition-duration: 1s;
+            opacity: 0;
+        }
+        ul.nav > li:hover > ul.sub {
+            display: block;
+            transition-property: opacity;
+            transition-duration: 3s;
+            transition-delay: 30ms;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<ul class="nav">
+    <li><a href=#>Main</a>
+        <ul class="sub">
+            <li><a href=#>Job</a></li>
+            <li><a href=#>Keys</a></li>
+            <li><a href=#>Artists</a></li>
+        </ul>
+    </li>
+    <li><a href=#>Rock</a>
+        <ul class="sub">
+            <li><a href=#>Songs</a></li>
+            <li><a href=#>Bands</a></li>
+            <li><a href=#>Correct</a></li>
+            <li><a href=#>Movies</a></li>
+            <li><a href=#>Stars</a></li>
+        </ul>
+    </li>
+    <li><a href=#>Books</a>
+        <ul class="sub">
+            <li><a href=#>PHP</a></li>
+            <li><a href=#>C#</a></li>
+            <li><a href=#>Java Script</a></li>
+            <li><a href=#>Java</a></li>
+            <li><a href=#>Fortran</a></li>
+        </ul>
+    </li>
+    <li><a href=#>About</a>
+        <ul class="sub">
+            <li><a href=#>About program</a></li>
+            <li><a href=#>About games</a></li>
+            <li><a href=#>About US</a></li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
